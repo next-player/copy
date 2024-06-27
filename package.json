@@ -1,0 +1,20 @@
+{
+    "name": "next-copy",
+    "private": false,
+    "version": "0.0.1",
+    "type": "module",
+    "author": "Yuguo Xia",
+    "license": "MIT",
+    "scripts": {
+        "build": "rollup -c"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^26.0.1",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "rollup": "^4.18.0",
+        "tslib": "^2.6.3",
+        "typescript": "^5.5.2"
+    }
+}
