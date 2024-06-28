@@ -7,9 +7,9 @@ export default {
   input: 'src/index.ts',
   output: {
     file: 'dist/bundle.js',
-    format: 'iife',
+    format: 'module',
     name: 'NextCopy',
-    sourcemap: true,
+    sourcemap: false,
   },
   plugins: [
     resolve(),

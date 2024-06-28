@@ -1,5 +1,5 @@
 # Next Copy
-
+Base on [clipboard api](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText).
 A simple and efficient web component that allows users to copy text to the clipboard. Built with TypeScript and bundled using Rollup.
 
 ## Features
@@ -28,17 +28,64 @@ Here is how you can use the web component in your HTML file:
 
 ### HTML
 
+#### Example One
+Using `content` attribute to assign the text to be copied.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web Component</title>
+  <title>Next Copy Example</title>
 </head>
 <body>
-  <next-copy></next-copy>
-  <script src="path/to/bundle.js"></script> <!-- Use the path to your bundled script -->
+  <next-copy content="This is a need copy text">
+  </next-copy>
+  <script src="../dist/bundle.js"></script> <!-- Use the path to your bundled script -->
+  <script>
+    function() {
+      const nextCopy = document.querySelector('next-copy');
+      nextCopy.addEventListener('onSuccess', (event) => {
+        alert(event.detail.message);
+      });
+      nextCopy.addEventListener('onError', (event) => {
+        alert(event.detail.message);
+      });
+    }();
+  </script>
+</body>
+</html>
+```
+
+#### Example Two
+Using slot to assign the text to be copied.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Copy Example</title>
+</head>
+<body>
+  <next-copy>
+    <span slot="text">This is a need copy text</span>
+    <button slot="copy">Your Copy Button</button>
+  </next-copy>
+  <script src="../dist/bundle.js"></script> <!-- Use the path to your bundled script -->
+  <script>
+    function() {
+      const nextCopy = document.querySelector('next-copy');
+      nextCopy.addEventListener('onSuccess', (event) => {
+        alert(event.detail.message);
+      });
+      nextCopy.addEventListener('onError', (event) => {
+        alert(event.detail.message);
+      });
+    }();
+  </script>
 </body>
 </html>
 ```
@@ -53,9 +100,13 @@ import 'next-copy';
 // Now you can use <next-copy> in your HTML
 ```
 
+## Compatibility
+
+Refer To: [Can I Use](https://caniuse.com/?search=clipboard.writeText)
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/next-player/copy/blob/main/LICENSE) file for details.
 
 ## Acknowledgments
 

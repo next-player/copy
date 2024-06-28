@@ -1,12 +1,25 @@
 {
     "name": "next-copy",
     "private": false,
-    "version": "0.0.1",
+    "version": "0.0.10",
     "type": "module",
     "author": "Yuguo Xia",
     "license": "MIT",
+    "keywords": [
+        "copy",
+        "web component",
+        "typescript"
+    ],
     "scripts": {
+        "dev": "rollup -c -w",
         "build": "rollup -c"
+    },
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/next-player/copy.git"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^26.0.1",

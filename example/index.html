@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Copy Example</title>
+</head>
+<body>
+  <next-copy>
+    <span slot="text">This is a need copy text</span>
+  </next-copy>
+  <script src="../dist/bundle.js"></script> <!-- Use the path to your bundled script -->
+  <script>
+    function init() {
+      const nextCopy = document.querySelector('next-copy');
+      nextCopy.addEventListener('onSuccess', (event) => {
+        alert(event.detail.message);
+      });
+      nextCopy.addEventListener('onError', (event) => {
+        alert(event.detail.message);
+      });
+    };
+    init();
+  </script>
+</body>
+</html>
