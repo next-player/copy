@@ -44,7 +44,7 @@ Using `content` attribute to assign the text to be copied.
   </next-copy>
   <script src="../dist/bundle.js"></script> <!-- Use the path to your bundled script -->
   <script>
-    function() {
+    (function() {
       const nextCopy = document.querySelector('next-copy');
       nextCopy.addEventListener('onSuccess', (event) => {
         alert(event.detail.message);
@@ -52,7 +52,7 @@ Using `content` attribute to assign the text to be copied.
       nextCopy.addEventListener('onError', (event) => {
         alert(event.detail.message);
       });
-    }();
+    })();
   </script>
 </body>
 </html>
@@ -76,7 +76,7 @@ Using slot to assign the text to be copied.
   </next-copy>
   <script src="../dist/bundle.js"></script> <!-- Use the path to your bundled script -->
   <script>
-    function() {
+    (function() {
       const nextCopy = document.querySelector('next-copy');
       nextCopy.addEventListener('onSuccess', (event) => {
         alert(event.detail.message);
@@ -84,7 +84,7 @@ Using slot to assign the text to be copied.
       nextCopy.addEventListener('onError', (event) => {
         alert(event.detail.message);
       });
-    }();
+    })();
   </script>
 </body>
 </html>

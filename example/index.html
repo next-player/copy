@@ -11,7 +11,7 @@
   </next-copy>
   <script src="../dist/bundle.js"></script> <!-- Use the path to your bundled script -->
   <script>
-    function init() {
+    (function() {
       const nextCopy = document.querySelector('next-copy');
       nextCopy.addEventListener('onSuccess', (event) => {
         alert(event.detail.message);
@@ -19,8 +19,7 @@
       nextCopy.addEventListener('onError', (event) => {
         alert(event.detail.message);
       });
-    };
-    init();
+    })();
   </script>
 </body>
 </html>
